@@ -32,6 +32,7 @@ void fsm_automatic_run(){
 			status = AUTO_GREEN;
 			setTimer1(200);
 		}
+		break;
 	case AUTO_GREEN:
 		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
