@@ -98,18 +98,18 @@ void fsm_automatic_run(){
  8000168:	080001d5 	.word	0x080001d5
  800016c:	08000209 	.word	0x08000209
 	case INIT:
-		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
- 8000170:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
+ 8000170:	2200      	movs	r2, #0
  8000172:	2120      	movs	r1, #32
  8000174:	4837      	ldr	r0, [pc, #220]	; (8000254 <fsm_automatic_run+0x108>)
  8000176:	f000 fd1f 	bl	8000bb8 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
- 800017a:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
+ 800017a:	2200      	movs	r2, #0
  800017c:	2140      	movs	r1, #64	; 0x40
  800017e:	4835      	ldr	r0, [pc, #212]	; (8000254 <fsm_automatic_run+0x108>)
  8000180:	f000 fd1a 	bl	8000bb8 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
- 8000184:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
+ 8000184:	2200      	movs	r2, #0
  8000186:	2180      	movs	r1, #128	; 0x80
  8000188:	4832      	ldr	r0, [pc, #200]	; (8000254 <fsm_automatic_run+0x108>)
  800018a:	f000 fd15 	bl	8000bb8 <HAL_GPIO_WritePin>
@@ -123,18 +123,18 @@ void fsm_automatic_run(){
 		break;
  800019c:	e056      	b.n	800024c <fsm_automatic_run+0x100>
 	case AUTO_RED:
-		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
- 800019e:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
+ 800019e:	2201      	movs	r2, #1
  80001a0:	2120      	movs	r1, #32
  80001a2:	482c      	ldr	r0, [pc, #176]	; (8000254 <fsm_automatic_run+0x108>)
  80001a4:	f000 fd08 	bl	8000bb8 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
- 80001a8:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
+ 80001a8:	2200      	movs	r2, #0
  80001aa:	2140      	movs	r1, #64	; 0x40
  80001ac:	4829      	ldr	r0, [pc, #164]	; (8000254 <fsm_automatic_run+0x108>)
  80001ae:	f000 fd03 	bl	8000bb8 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
- 80001b2:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
+ 80001b2:	2200      	movs	r2, #0
  80001b4:	2180      	movs	r1, #128	; 0x80
  80001b6:	4827      	ldr	r0, [pc, #156]	; (8000254 <fsm_automatic_run+0x108>)
  80001b8:	f000 fcfe 	bl	8000bb8 <HAL_GPIO_WritePin>
@@ -154,18 +154,18 @@ void fsm_automatic_run(){
 		break;
  80001d2:	e036      	b.n	8000242 <fsm_automatic_run+0xf6>
 	case AUTO_YELLOW:
-		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
- 80001d4:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
+ 80001d4:	2200      	movs	r2, #0
  80001d6:	2120      	movs	r1, #32
  80001d8:	481e      	ldr	r0, [pc, #120]	; (8000254 <fsm_automatic_run+0x108>)
  80001da:	f000 fced 	bl	8000bb8 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
- 80001de:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
+ 80001de:	2201      	movs	r2, #1
  80001e0:	2140      	movs	r1, #64	; 0x40
  80001e2:	481c      	ldr	r0, [pc, #112]	; (8000254 <fsm_automatic_run+0x108>)
  80001e4:	f000 fce8 	bl	8000bb8 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
- 80001e8:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
+ 80001e8:	2200      	movs	r2, #0
  80001ea:	2180      	movs	r1, #128	; 0x80
  80001ec:	4819      	ldr	r0, [pc, #100]	; (8000254 <fsm_automatic_run+0x108>)
  80001ee:	f000 fce3 	bl	8000bb8 <HAL_GPIO_WritePin>
@@ -185,18 +185,18 @@ void fsm_automatic_run(){
 		break;
  8000206:	e01e      	b.n	8000246 <fsm_automatic_run+0xfa>
 	case AUTO_GREEN:
-		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
- 8000208:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
+ 8000208:	2200      	movs	r2, #0
  800020a:	2120      	movs	r1, #32
  800020c:	4811      	ldr	r0, [pc, #68]	; (8000254 <fsm_automatic_run+0x108>)
  800020e:	f000 fcd3 	bl	8000bb8 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
- 8000212:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
+ 8000212:	2200      	movs	r2, #0
  8000214:	2140      	movs	r1, #64	; 0x40
  8000216:	480f      	ldr	r0, [pc, #60]	; (8000254 <fsm_automatic_run+0x108>)
  8000218:	f000 fcce 	bl	8000bb8 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
- 800021c:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
+ 800021c:	2201      	movs	r2, #1
  800021e:	2180      	movs	r1, #128	; 0x80
  8000220:	480c      	ldr	r0, [pc, #48]	; (8000254 <fsm_automatic_run+0x108>)
  8000222:	f000 fcc9 	bl	8000bb8 <HAL_GPIO_WritePin>
