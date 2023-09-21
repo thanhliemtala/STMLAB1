@@ -12,9 +12,10 @@
 //#include "button.h"
 #include "main.h"
 #define INIT		1
-#define	AUTO_RED	2
-#define AUTO_YELLOW	3
-#define AUTO_GREEN	4
+#define	AUTO_RED2s	2
+#define AUTO_RED3s	3
+#define AUTO_YELLOW	4
+#define AUTO_GREEN	5
 extern int status;
 
 
