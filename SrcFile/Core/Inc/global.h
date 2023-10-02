@@ -9,7 +9,7 @@
 #define INC_GLOBAL_H_
 
 #include "software_timer.h"
-//#include "button.h"
+#include "display7SEG.h"
 #include "main.h"
 #define INIT		1
 #define	AUTO_RED2s	2

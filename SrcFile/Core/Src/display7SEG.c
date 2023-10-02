@@ -7,7 +7,7 @@
 
 #include "display7SEG.h"
 
-void display(int num){
+void display7SEG(int num){
 	switch(num){
 	case 0:
 		HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, GPIO_PIN_SET);

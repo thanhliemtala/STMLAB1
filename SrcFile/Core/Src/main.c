@@ -96,7 +96,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   status = INIT;
-  int counter = 0;
+  int counter = 1;
   while (1)
   {
 	  fsm_automatic_run();
