@@ -96,13 +96,26 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int light = 5;
   status = INIT;
-  int counter = 0;
   while (1)
   {
 	  fsm_automatic_run();
-	  if(counter >= 10) counter = 0;
-	  display7SEG(counter++);
+	  display7SEG(light--);
+	  switch(status){
+	  case AUTO_RED2s:
+		  if(light == 0){
+			  light =3;
+		  }
+	  case AUTO_GREEN:
+		  if(light == 0){
+			  light =2;
+		  }
+	  case AUTO_YELLOW:
+		  if(light ==1){
+			  light = 5;
+	  }
+		  }
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
