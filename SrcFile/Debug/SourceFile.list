@@ -386,8 +386,8 @@ void display7SEG(int num){
  800039a:	2104      	movs	r1, #4
  800039c:	4832      	ldr	r0, [pc, #200]	; (8000468 <display7SEG+0x31c>)
  800039e:	f000 fe5d 	bl	800105c <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(d_GPIO_Port,d_Pin, GPIO_PIN_RESET);
- 80003a2:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(d_GPIO_Port,d_Pin, GPIO_PIN_SET);
+ 80003a2:	2201      	movs	r2, #1
  80003a4:	2108      	movs	r1, #8
  80003a6:	4830      	ldr	r0, [pc, #192]	; (8000468 <display7SEG+0x31c>)
  80003a8:	f000 fe58 	bl	800105c <HAL_GPIO_WritePin>
