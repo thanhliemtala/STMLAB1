@@ -35,15 +35,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_ranges 000008c0  00000000  00000000  0002ae08  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00016874  00000000  00000000  0002b6c8  2**0
+ 16 .debug_macro  00016878  00000000  00000000  0002b6c8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000a833  00000000  00000000  00041f3c  2**0
+ 17 .debug_line   0000a833  00000000  00000000  00041f40  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008200c  00000000  00000000  0004c76f  2**0
+ 18 .debug_str    0008200c  00000000  00000000  0004c773  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000ce77b  2**0
+ 19 .comment      00000053  00000000  00000000  000ce77f  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002688  00000000  00000000  000ce7d0  2**2
+ 20 .debug_frame  00002688  00000000  00000000  000ce7d4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -105,33 +105,33 @@ void display7SEG(int num){
  8000188:	08000403 	.word	0x08000403
 	switch(num){
 	case 0:
-		HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, GPIO_PIN_SET);
- 800018c:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, GPIO_PIN_RESET);
+ 800018c:	2200      	movs	r2, #0
  800018e:	2101      	movs	r1, #1
  8000190:	48af      	ldr	r0, [pc, #700]	; (8000450 <display7SEG+0x304>)
  8000192:	f000 ff57 	bl	8001044 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(b_GPIO_Port,b_Pin, GPIO_PIN_SET);
- 8000196:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(b_GPIO_Port,b_Pin, GPIO_PIN_RESET);
+ 8000196:	2200      	movs	r2, #0
  8000198:	2102      	movs	r1, #2
  800019a:	48ad      	ldr	r0, [pc, #692]	; (8000450 <display7SEG+0x304>)
  800019c:	f000 ff52 	bl	8001044 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(c_GPIO_Port,c_Pin, GPIO_PIN_SET);
- 80001a0:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(c_GPIO_Port,c_Pin, GPIO_PIN_RESET);
+ 80001a0:	2200      	movs	r2, #0
  80001a2:	2104      	movs	r1, #4
  80001a4:	48aa      	ldr	r0, [pc, #680]	; (8000450 <display7SEG+0x304>)
  80001a6:	f000 ff4d 	bl	8001044 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(d_GPIO_Port,d_Pin, GPIO_PIN_SET);
- 80001aa:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(d_GPIO_Port,d_Pin, GPIO_PIN_RESET);
+ 80001aa:	2200      	movs	r2, #0
  80001ac:	2108      	movs	r1, #8
  80001ae:	48a8      	ldr	r0, [pc, #672]	; (8000450 <display7SEG+0x304>)
  80001b0:	f000 ff48 	bl	8001044 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(e_GPIO_Port,e_Pin, GPIO_PIN_SET);
- 80001b4:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(e_GPIO_Port,e_Pin, GPIO_PIN_RESET);
+ 80001b4:	2200      	movs	r2, #0
  80001b6:	2110      	movs	r1, #16
  80001b8:	48a5      	ldr	r0, [pc, #660]	; (8000450 <display7SEG+0x304>)
  80001ba:	f000 ff43 	bl	8001044 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(f_GPIO_Port,f_Pin, GPIO_PIN_SET);
- 80001be:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(f_GPIO_Port,f_Pin, GPIO_PIN_RESET);
+ 80001be:	2200      	movs	r2, #0
  80001c0:	2120      	movs	r1, #32
  80001c2:	48a3      	ldr	r0, [pc, #652]	; (8000450 <display7SEG+0x304>)
  80001c4:	f000 ff3e 	bl	8001044 <HAL_GPIO_WritePin>
@@ -387,7 +387,7 @@ void display7SEG(int num){
  80003aa:	2120      	movs	r1, #32
  80003ac:	4828      	ldr	r0, [pc, #160]	; (8000450 <display7SEG+0x304>)
  80003ae:	f000 fe49 	bl	8001044 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(g_GPIO_Port,g_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(g_GPIO_Port,g_Pin, GPIO_PIN_RESET);;
  80003b2:	2200      	movs	r2, #0
  80003b4:	2140      	movs	r1, #64	; 0x40
  80003b6:	4826      	ldr	r0, [pc, #152]	; (8000450 <display7SEG+0x304>)
@@ -464,6 +464,7 @@ void display7SEG(int num){
  8000440:	2140      	movs	r1, #64	; 0x40
  8000442:	4803      	ldr	r0, [pc, #12]	; (8000450 <display7SEG+0x304>)
  8000444:	f000 fdfe 	bl	8001044 <HAL_GPIO_WritePin>
+	default: break;
 	}
 }
  8000448:	bf00      	nop
@@ -791,8 +792,8 @@ int main(void)
  8000658:	4b0c      	ldr	r3, [pc, #48]	; (800068c <main+0x50>)
  800065a:	2201      	movs	r2, #1
  800065c:	601a      	str	r2, [r3, #0]
-  int counter = 1;
- 800065e:	2301      	movs	r3, #1
+  int counter = 0;
+ 800065e:	2300      	movs	r3, #0
  8000660:	607b      	str	r3, [r7, #4]
   while (1)
   {
