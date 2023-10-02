@@ -101,18 +101,19 @@ int main(void)
   while (1)
   {
 	  fsm_automatic_run();
-	  display7SEG(light--);
+	  display7SEG(light);
+	  light--;
 	  switch(status){
 	  case AUTO_RED2s:
-		  if(light <= 0){
+		  if(light ==0){
 			  light =3;
 		  }
 	  case AUTO_GREEN:
-		  if(light <= 0){
+		  if(light ==0){
 			  light =2;
 		  }
 	  case AUTO_YELLOW:
-		  if(light <=0){
+		  if(light ==0){
 			  light = 5;
 	  }
 		  }
