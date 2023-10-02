@@ -842,28 +842,28 @@ int main(void)
  800069c:	d00a      	beq.n	80006b4 <main+0x60>
  800069e:	e00e      	b.n	80006be <main+0x6a>
 	  case AUTO_RED2s:
-		  if(light == 0){
+		  if(light <= 0){
  80006a0:	687b      	ldr	r3, [r7, #4]
  80006a2:	2b00      	cmp	r3, #0
- 80006a4:	d101      	bne.n	80006aa <main+0x56>
+ 80006a4:	dc01      	bgt.n	80006aa <main+0x56>
 			  light =3;
  80006a6:	2303      	movs	r3, #3
  80006a8:	607b      	str	r3, [r7, #4]
 		  }
 	  case AUTO_GREEN:
-		  if(light == 0){
+		  if(light <= 0){
  80006aa:	687b      	ldr	r3, [r7, #4]
  80006ac:	2b00      	cmp	r3, #0
- 80006ae:	d101      	bne.n	80006b4 <main+0x60>
+ 80006ae:	dc01      	bgt.n	80006b4 <main+0x60>
 			  light =2;
  80006b0:	2302      	movs	r3, #2
  80006b2:	607b      	str	r3, [r7, #4]
 		  }
 	  case AUTO_YELLOW:
-		  if(light ==1){
+		  if(light <=0){
  80006b4:	687b      	ldr	r3, [r7, #4]
- 80006b6:	2b01      	cmp	r3, #1
- 80006b8:	d101      	bne.n	80006be <main+0x6a>
+ 80006b6:	2b00      	cmp	r3, #0
+ 80006b8:	dc01      	bgt.n	80006be <main+0x6a>
 			  light = 5;
  80006ba:	2305      	movs	r3, #5
  80006bc:	607b      	str	r3, [r7, #4]
