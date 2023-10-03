@@ -23,7 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
-#include "fsm_automatic.h"
+#include "LedCount.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,12 +95,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  status = INIT;
+  int n =0;
   while (1)
   {
-	  fsm_automatic_run();
     /* USER CODE END WHILE */
-
+	  LedCount(n);
+	  n++;
+	  if(n >=12) n =0;
+	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -199,10 +201,16 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin|LED_YELLOW_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, one_Pin|two_Pin|three_Pin|four_Pin
+                          |five_Pin|six_Pin|seven_Pin|eight_Pin
+                          |nine_Pin|ten_Pin|eleven_Pin|twelve_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_RED_Pin LED_YELLOW_Pin */
-  GPIO_InitStruct.Pin = LED_RED_Pin|LED_YELLOW_Pin;
+  /*Configure GPIO pins : one_Pin two_Pin three_Pin four_Pin
+                           five_Pin six_Pin seven_Pin eight_Pin
+                           nine_Pin ten_Pin eleven_Pin twelve_Pin */
+  GPIO_InitStruct.Pin = one_Pin|two_Pin|three_Pin|four_Pin
+                          |five_Pin|six_Pin|seven_Pin|eight_Pin
+                          |nine_Pin|ten_Pin|eleven_Pin|twelve_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
