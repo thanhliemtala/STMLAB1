@@ -97,6 +97,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int light = 5;
+  int flag =0;
   status = INIT;
   while (1)
   {
@@ -105,18 +106,23 @@ int main(void)
 	  light--;
 	  switch(status){
 	  case AUTO_RED2s:
-		  if(light ==0){
+		  if(light <= 0){
 			  light =3;
 		  }
 	  case AUTO_GREEN:
-		  if(light ==0){
-			  light =2;
+		  if(light <=0){
+			  light =3;
 		  }
 	  case AUTO_YELLOW:
-		  if(light ==0){
-			  light = 5;
+		  if(light <=0){
+			  light = 2;
+			  flag =1;
 	  }
 		  }
+	  if(status == AUTO_RED3s && flag ==1){
+		  light =5;
+		  flag=0;
+	  }
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
