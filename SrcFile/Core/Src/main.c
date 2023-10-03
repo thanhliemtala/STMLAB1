@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
 #include "LedCount.h"
+#include "clearAllClock.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,6 +103,7 @@ int main(void)
 	  LedCount(n);
 	  n++;
 	  if(n >=12) n =0;
+	  clearAllClock();
 	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
