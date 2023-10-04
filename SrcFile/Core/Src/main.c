@@ -26,6 +26,7 @@
 #include "LedCount.h"
 #include "clearAllClock.h"
 #include "setNumberOnClock.h"
+#include "clearNumberOnClock.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -100,7 +101,7 @@ int main(void)
   int n =0;
   while (1)
   {
-	  setNumberOnClock(n);
+	  clearNumberOnClock(n);
 	  n++;
 	  if(n >=12) n =0;
 	  HAL_Delay(1000);

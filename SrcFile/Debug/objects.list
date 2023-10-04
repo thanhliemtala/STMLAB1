@@ -1,5 +1,6 @@
 "./Core/Src/LedCount.o"
 "./Core/Src/clearAllClock.o"
+"./Core/Src/clearNumberOnClock.o"
 "./Core/Src/global.o"
 "./Core/Src/main.o"
 "./Core/Src/setNumberOnClock.o"

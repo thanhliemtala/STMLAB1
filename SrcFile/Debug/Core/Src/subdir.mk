@@ -7,6 +7,7 @@
 C_SRCS += \
 ../Core/Src/LedCount.c \
 ../Core/Src/clearAllClock.c \
+../Core/Src/clearNumberOnClock.c \
 ../Core/Src/global.c \
 ../Core/Src/main.c \
 ../Core/Src/setNumberOnClock.c \
@@ -20,6 +21,7 @@ C_SRCS += \
 OBJS += \
 ./Core/Src/LedCount.o \
 ./Core/Src/clearAllClock.o \
+./Core/Src/clearNumberOnClock.o \
 ./Core/Src/global.o \
 ./Core/Src/main.o \
 ./Core/Src/setNumberOnClock.o \
@@ -33,6 +35,7 @@ OBJS += \
 C_DEPS += \
 ./Core/Src/LedCount.d \
 ./Core/Src/clearAllClock.d \
+./Core/Src/clearNumberOnClock.d \
 ./Core/Src/global.d \
 ./Core/Src/main.d \
 ./Core/Src/setNumberOnClock.d \
