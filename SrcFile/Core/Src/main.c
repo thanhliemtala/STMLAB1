@@ -98,13 +98,26 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int n =0;
+  int hr =0,min = 0, sec=0;
   while (1)
   {
-	  clearNumberOnClock(n);
-	  n++;
-	  if(n >=12) n =0;
-	  HAL_Delay(1000);
+	  clearAllClock();
+	  setNumberOnClock(hr);
+	  setNumberOnClock(min/5);
+	  setNumberOnClock(sec/5);
+	  sec++;
+	  if(sec == 60){
+		  sec=0;
+		  min++;
+	  }
+	  if(min == 60){
+		  min =0;
+		  hr++;
+	  }
+	  if(hr ==12){
+		  hr =0;
+	  }
+	  HAL_Delay(10);
   /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
   }
